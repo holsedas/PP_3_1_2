@@ -25,7 +25,7 @@ public class UsersController {
     }
 
     @GetMapping("/{id}")
-    public String show(@PathVariable("id") Long id, Model model) {
+    public String showUser(@PathVariable("id") Long id, Model model) {
         User user = usersService.findOne(id);
         if (user == null) {
             return "redirect:/users";
@@ -63,7 +63,7 @@ public class UsersController {
     }
 
     @DeleteMapping("/{id}")
-    public String deleteUserSubmit(@PathVariable("id") Long id) {
+    public String deleteUser(@PathVariable("id") Long id) {
         usersService.delete(id);
         return "redirect:/users";
     }
